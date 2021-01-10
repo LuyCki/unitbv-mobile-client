@@ -1,0 +1,17 @@
+<ActionBar>
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text="Anunțuri"></Label>
+</ActionBar>
+
+<GridLayout>
+    <ListView [items]="items">
+        <ng-template let-item="item">
+            <StackLayout>
+                <Label [nsRouterLink]="['./item', item.id]" [text]="item.name"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
