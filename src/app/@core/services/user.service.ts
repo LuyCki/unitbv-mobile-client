@@ -27,7 +27,6 @@ export class UserService {
   public login(payload: Login): void {
     this.http.post('auth/login', payload)
       .subscribe(response => {
-        console.log(response);
         const jwtPayload = { key: 'jwt_token', value: response.accessToken };
         const jwtDecoded = jwt_decode<any>(response.accessToken)
 
@@ -53,11 +52,9 @@ export class UserService {
     const jwtToken = this.localStorageService.getString('jwt_token');
     const currentUser: User = JSON.parse(this.localStorageService.getString('current_user'));
 
-    console.log(jwtToken)
-    console.log(currentUser)
-    this.currentUser.next(currentUser);
-
     if (jwtToken) {
+      this.currentUser.next(currentUser);
+
       switch (currentUser.role) {
         case 'ROLE_ADMIN':
           this.routerExtension.navigate(["../visualization-data"]);

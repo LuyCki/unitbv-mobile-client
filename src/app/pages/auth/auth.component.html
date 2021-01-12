@@ -3,7 +3,6 @@
 </ActionBar>
 
 <StackLayout verticalAlignment="center">
-    <Image src="./app/images/icon.png" ></Image>
     <TextField hint="Email" [(ngModel)]="loginPayload.email"></TextField>
     <TextField hint="Parola" secure="true" [(ngModel)]="loginPayload.password"></TextField>
     <Button text="Autentificare" (tap)="onLogin()" color="#fff" backgroundColor="#16a085"></Button>

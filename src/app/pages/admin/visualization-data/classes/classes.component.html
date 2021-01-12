@@ -6,12 +6,12 @@
 <GridLayout>
     <ListView [items]="classes">
         <ng-template let-item="item">
-            <StackLayout>
+            <StackLayout flexDirection="row">
                 <Label [text]='"Grupa: " + item.id'></Label>
                 <Label [text]='"An: " + item.year'></Label>
                 <Label [text]='"Specializare: " + item.specialization'></Label>
 
-                <ListView [items]="item.groups">
+                <ListView height="100" [items]="item.groups">
                     <ng-template let-group="item">
                         <Label [text]="group.id"></Label>
                     </ng-template>
@@ -19,4 +19,4 @@
             </StackLayout>
         </ng-template>
     </ListView>
-</GridLayout>
+</GridLayout>W

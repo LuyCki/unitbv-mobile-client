@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     sideDrawer.closeDrawer();
   }
 
-  public logout() {
+  public logout(): void {
     const sideDrawer = <RadSideDrawer>Application.getRootView();
     sideDrawer.closeDrawer();
     this.userService.logout();

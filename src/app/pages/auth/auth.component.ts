@@ -15,11 +15,4 @@ export class AuthComponent {
   public onLogin(): void {
     this.userService.login(this.loginPayload);
   }
-
-  public onNavigateStudent() {
-    this.userService.login({
-      email: "student@gmail.com",
-      password: "test"
-    });
-  }
 }
