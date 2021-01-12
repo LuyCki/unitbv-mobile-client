@@ -1,0 +1,16 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label text="Profesori"></Label>
+</ActionBar>
+
+<GridLayout>
+    <ListView [items]="professors">
+        <ng-template let-item="item">
+            <StackLayout>
+                <Label [text]='"Nume: " + item.user.fullName'></Label>
+                <Label [text]='"Email: " + item.user.email'></Label>
+                <Label [text]='"CNP: " + item.cnp'></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

@@ -1,0 +1,15 @@
+<ActionBar>
+	<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+	<ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+	</ActionItem>
+	<Label text="Vizualizare date"></Label>
+</ActionBar>
+
+<StackLayout>
+	<Button [nsRouterLink]="['./departments']" text="Departamente" color="#fff" backgroundColor="#16a085"></Button>
+	<Button [nsRouterLink]="['./disciplines']" text="Discipline" color="#fff" backgroundColor="#16a085"></Button>
+	<Button [nsRouterLink]="['./classes']" text="Clase/Grupe" color="#fff" backgroundColor="#16a085"></Button>
+	<Button [nsRouterLink]="['./professors']" text="Profesori" color="#fff" backgroundColor="#16a085"></Button>
+	<Button [nsRouterLink]="['./students']" text="Studenti" color="#fff" backgroundColor="#16a085"></Button>
+	<Button [nsRouterLink]="['./specializations']" text="Specializari" color="#fff" backgroundColor="#16a085"></Button>
+</StackLayout>

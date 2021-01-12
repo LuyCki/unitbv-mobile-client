@@ -1,0 +1,22 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label text="Clase/Grupe"></Label>
+</ActionBar>
+
+<GridLayout>
+    <ListView [items]="classes">
+        <ng-template let-item="item">
+            <StackLayout>
+                <Label [text]='"Grupa: " + item.id'></Label>
+                <Label [text]='"An: " + item.year'></Label>
+                <Label [text]='"Specializare: " + item.specialization'></Label>
+
+                <ListView [items]="item.groups">
+                    <ng-template let-group="item">
+                        <Label [text]="group.id"></Label>
+                    </ng-template>
+                </ListView>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

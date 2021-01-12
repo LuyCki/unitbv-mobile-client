@@ -1,0 +1,27 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label [text]="disciplineId"></Label>
+</ActionBar>
+<FlexboxLayout flexDirection="column">
+    <GridLayout flexGrow="1">
+        <ListView [items]="exams">
+            <ng-template let-item="item">
+                <FlexboxLayout flexDirection="row">
+                    <FlexboxLayout (tap)="goToGrades(item.id)" flexGrow="1" flexDirection="column">
+                        <Label [text]='"Disciplina: " + item.discipline.name'></Label>
+                        <Label [text]='"Descriere: " + item.discipline.description'></Label>
+                        <Label [text]="item.examDate | date:'dd:MM:yy HH:mm'"></Label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout flexGrow="1" flexDirection="column">
+                        <Button height="35" text="Editare" (tap)="editExam(item.id)"></Button>
+                        <Button height="35" text="Stergere" (tap)="deleteExam(item.id)" color="#fff" backgroundColor="#c0392b" ></Button>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+
+    <Button flexGrow="1" height="100" text="Adaugare examen" (tap)="addExam()" color="#fff" backgroundColor="#27ae60"></Button>
+</FlexboxLayout>
+

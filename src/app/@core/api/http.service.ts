@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  private readonly host = 'http://localhost:3000';
+  private readonly host = 'http://10.0.2.2:8080/';
 
   constructor(private readonly http: HttpClient) {}
 
@@ -28,5 +28,9 @@ export class HttpService {
 
   public delete(endpoint: string): Observable<any> {
     return this.http.delete(`${this.host}${endpoint}`);
+  }
+
+  public getHost(): string {
+    return this.host;
   }
 }

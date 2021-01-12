@@ -1,0 +1,16 @@
+<ActionBar>
+	<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+	<ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+	</ActionItem>
+	<Label text="Incarcare documente"></Label>
+</ActionBar>
+
+<StackLayout>
+	<Button text="Incarcare profesori" (tap)="pickFile('admin/upload_professors')" color="#fff" backgroundColor="#16a085"></Button>
+	<Button text="Incarcare departamente" (tap)="pickFile('admin/upload_departments')" color="#fff" backgroundColor="#16a085"></Button>
+    <Button text="Incarcare specializari" (tap)="pickFile('admin/upload_specializations')" color="#fff" backgroundColor="#16a085"></Button>
+    <Button text="Incarcare discipline" (tap)="pickFile('admin/upload_disciplines')" color="#fff" backgroundColor="#16a085"></Button>
+    <Button text="Incarcare clase" (tap)="pickFile('admin/upload_classes')" color="#fff" backgroundColor="#16a085"></Button>
+    <Button text="Incarcare grupe" (tap)="pickFile('admin/upload_groups')" color="#fff" backgroundColor="#16a085"></Button>
+    <Button text="Incarcare studenti" (tap)="pickFile('admin/upload_students')" color="#fff" backgroundColor="#16a085"></Button>
+</StackLayout>

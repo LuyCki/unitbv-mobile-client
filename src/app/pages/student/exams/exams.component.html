@@ -1,0 +1,17 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label [text]="disciplineId"></Label>
+</ActionBar>
+
+<GridLayout flexGrow="1">
+    <ListView [items]="exams">
+        <ng-template let-item="item">
+            <StackLayout (tap)="goToGrades(item.id)" flexGrow="1" flexDirection="column">
+                <Label [text]='"Disciplina: " + item.discipline.name'></Label>
+                <Label [text]='"Descriere: " + item.discipline.description'></Label>
+                <Label [text]="item.examDate | date:'dd:MM:yy HH:mm'"></Label>
+                <Label [text]='"Note: " + item.grades[item.grades.length -1].mark'></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

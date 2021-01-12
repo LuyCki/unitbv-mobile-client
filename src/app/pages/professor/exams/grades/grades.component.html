@@ -1,0 +1,31 @@
+<ActionBar>
+  <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+  <Label text="Note"></Label>
+</ActionBar>
+
+<FlexboxLayout flexDirection="column">
+  <GridLayout flexGrow="1">
+    <ListView [items]="grades">
+      <ng-template let-item="item">
+        <FlexboxLayout flexDirection="row">
+          <FlexboxLayout flexGrow="1" flexDirection="column">
+            <Label [text]='"Student: " + item.student'></Label>
+            <Label [text]='"Examen: " + item.exam'></Label>
+            <Label [text]='"Nota: " + item.mark'></Label>
+          </FlexboxLayout>
+
+          <FlexboxLayout flexGrow="1" flexDirection="column">
+            <Button height="35" text="Editare" (tap)="editGrade(item.id)"></Button>
+            <Button height="35" text="Stergere" (tap)="deleteGrade(item.id)" color="#fff" backgroundColor="#c0392b" ></Button>
+          </FlexboxLayout>
+        </FlexboxLayout>
+
+      </ng-template>
+    </ListView>
+  </GridLayout>
+
+  <Button flexGrow="1" height="100"  text="Adaugare nota" (tap)="addGrade()" color="#fff" backgroundColor="#27ae60"></Button>
+</FlexboxLayout>
+
+
+

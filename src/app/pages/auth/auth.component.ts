@@ -1,14 +1,25 @@
+import { Login, UserService } from './../../@core/services/user.service';
 import { Component } from "@angular/core";
-import { RouterExtensions } from "@nativescript/angular";
-
 @Component({
     selector: "Auth",
     templateUrl: "./auth.component.html"
 })
 export class AuthComponent {
-  constructor(private routerExtension: RouterExtensions) { };
+  public loginPayload: Login = {
+    email: '',
+    password: ''
+  }
+
+  constructor(private userService: UserService) { };
+
+  public onLogin(): void {
+    this.userService.login(this.loginPayload);
+  }
 
   public onNavigateStudent() {
-    this.routerExtension.navigate(["/announces"]);
+    this.userService.login({
+      email: "student@gmail.com",
+      password: "test"
+    });
   }
 }

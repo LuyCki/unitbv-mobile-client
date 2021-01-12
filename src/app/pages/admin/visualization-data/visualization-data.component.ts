@@ -3,10 +3,10 @@ import { Application } from "@nativescript/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
 @Component({
-  selector: "Grade",
-  templateUrl: "./grade.component.html"
+  selector: "VisualizationData",
+  templateUrl: "./visualization-data.component.html"
 })
-export class GradeComponent {
+export class VisualizationDataComponent {
   public onDrawerButtonTap(): void {
     const sideDrawer = <RadSideDrawer>Application.getRootView();
     sideDrawer.showDrawer();

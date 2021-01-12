@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start:android": "tns run android",
+    "debug:android": "tns debug android",
     "lint": "tslint \"src/**/*.ts\""
   },
   "dependencies": {
@@ -19,8 +20,13 @@
     "@angular/platform-browser-dynamic": "~11.0.0",
     "@angular/router": "~11.0.0",
     "@nativescript/angular": "~11.0.0",
+    "@nativescript/background-http": "^5.0.1",
     "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~2.3.0",
+    "jwt-decode": "^3.1.2",
+    "nativescript-http-formdata": "^2.1.0",
+    "nativescript-mediafilepicker": "^4.0.2",
+    "nativescript-plugin-filepicker": "^1.0.0",
     "nativescript-ui-sidedrawer": "~9.0.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.6.0",

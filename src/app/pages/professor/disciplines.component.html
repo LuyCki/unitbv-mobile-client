@@ -3,14 +3,15 @@
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label text="Anunțuri"></Label>
+    <Label text="Discipline"></Label>
 </ActionBar>
 
 <GridLayout>
-    <ListView [items]="items">
+    <ListView [items]="disciplines">
         <ng-template let-item="item">
-            <StackLayout>
-                <Label [nsRouterLink]="['./item', item.id]" [text]="item.name"></Label>
+            <StackLayout [nsRouterLink]="['./exam', item.id]">
+                <Label [text]='"Disciplina: " + item.name'></Label>
+                <Label [text]='"Descriere: " + item.description'></Label>
             </StackLayout>
         </ng-template>
     </ListView>

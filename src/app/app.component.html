@@ -2,24 +2,40 @@
 	<GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
 		<StackLayout row="0" class="nt-drawer__header">
 			<Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
-			<Label class="nt-drawer__header-brand" text="Ciolac Lucian "></Label>
-			<Label class="nt-drawer__header-footnote" text="lucian.ciolac@blandica.com"></Label>
+			<Label class="nt-drawer__header-brand" [text]="user?.username "></Label>
+			<Label class="nt-drawer__header-footnote" [text]="user?.email"></Label>
+			<button class="btn" height="40" color="#fff" backgroundColor="#2980b9" text="Deconectare" (tap)="logout()"></button>
 		</StackLayout>
 
 		<ScrollView row="1" class="nt-drawer__body">
-			<StackLayout>
-				<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/announces')"
-					(tap)="onNavItemTap('/announces')">
+			<StackLayout *ngIf="user?.role === 'ROLE_STUDENT'">
+				<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/disciplines-student')"
+					(tap)="onNavItemTap('/disciplines-student')">
 					<Label col="0" text="&#xf1ea;" class="nt-icon far"></Label>
-					<Label col="1" text="Anunțuri" class="p-r-10"></Label>
+					<Label col="1" text="Examene" class="p-r-10"></Label>
+				</GridLayout>
+			</StackLayout>
+
+			<StackLayout *ngIf="user?.role === 'ROLE_PROFESSOR'">
+				<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/disciplines')"
+					(tap)="onNavItemTap('/disciplines')">
+					<Label col="0" text="&#xf1ea;" class="nt-icon far"></Label>
+					<Label col="1" text="Discipline" class="p-r-10"></Label>
+				</GridLayout>
+			</StackLayout>
+
+			<StackLayout *ngIf="user?.role === 'ROLE_ADMIN'">
+				<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/upload-documents')"
+					(tap)="onNavItemTap('/upload-documents')">
+					<Label col="0" text="&#xf1ea;" class="nt-icon far"></Label>
+					<Label col="1" text="Incarca documente" class="p-r-10"></Label>
 				</GridLayout>
 
-				<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/grade')"
-					(tap)="onNavItemTap('/grade')">
+				<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/visualization-data')"
+					(tap)="onNavItemTap('/visualization-data')">
 					<Label col="0" text="&#xf19d;" class="nt-icon fas"></Label>
-					<Label col="1" text="Note" class="p-r-10"></Label>
+					<Label col="1" text="Vizualizeaza date" class="p-r-10"></Label>
 				</GridLayout>
-
 			</StackLayout>
 		</ScrollView>
 	</GridLayout>

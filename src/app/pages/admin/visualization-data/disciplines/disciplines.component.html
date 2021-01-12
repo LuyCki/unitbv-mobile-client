@@ -1,0 +1,14 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label text="Discipline"></Label>
+</ActionBar>
+
+<GridLayout>
+    <ListView [items]="disciplines">
+        <ng-template let-item="item">
+            <StackLayout>
+                <Label [text]="item.name"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
